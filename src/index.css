@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-pikamon-dark-bg text-pikamon-dark-text;
+  }
+
+  input, select, textarea {
+    @apply bg-pikamon-dark-card/50 border-pikamon-dark-hover/50 text-pikamon-dark-text placeholder-pikamon-dark-muted backdrop-blur-sm;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    @apply border-white/20 ring-1 ring-white/20;
+  }
+
+  /* Mobile-first responsive text sizes */
+  h1 { @apply text-2xl sm:text-3xl font-bold; }
+  h2 { @apply text-xl sm:text-2xl font-semibold; }
+  h3 { @apply text-lg sm:text-xl font-medium; }
+  
+  /* Improved touch targets on mobile */
+  button, a {
+    @apply min-h-[44px] px-4;
+  }
+  
+  /* Better form controls on mobile */
+  input, select, textarea {
+    @apply min-h-[44px] px-4;
+  }
+}
+
+.glass-card {
+  @apply bg-pikamon-dark-card/30 backdrop-blur-md border border-white/5;
+}
+
+.glass-effect {
+  @apply bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-lg;
+}
+
+.hover-glow {
+  @apply transition-all duration-300;
+}
+
+.hover-glow:hover {
+  @apply shadow-lg shadow-white/10;
+}
+
+.glass-button {
+  @apply bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/10 transition-all duration-300;
+}
+
+.glass-button:hover {
+  @apply border-white/20 shadow-lg shadow-white/10;
+}
+
+.glass-input {
+  @apply bg-pikamon-dark-card/30 border-white/10 focus:border-white/20 focus:ring-white/20 backdrop-blur-sm;
+}
+
+.status-badge {
+  @apply bg-white/5 text-white/90 backdrop-blur-sm border border-white/10;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .glass-card {
+    @apply mx-0 rounded-lg;
+  }
+  
+  .table-container {
+    @apply -mx-4 sm:mx-0;
+  }
+  
+  .table-scroll {
+    @apply overflow-x-auto;
+  }
+  
+  .mobile-stack {
+    @apply flex flex-col gap-4;
+  }
+  
+  .mobile-full {
+    @apply w-full;
+  }
+  
+  .mobile-center {
+    @apply text-center;
+  }
+  
+  .mobile-hide {
+    @apply hidden sm:block;
+  }
+  
+  .mobile-show {
+    @apply block sm:hidden;
+  }
+}
+
+/* Improved scrollbars */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-pikamon-dark-hover/20;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20;
+}
